@@ -1,0 +1,83 @@
+.booking-page {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.booking-hero {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 4rem 1rem;
+    background-color: #495E57;
+    color: white;
+    border-radius: 16px;
+}
+
+.booking-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #F4CE14;
+}
+
+.booking-hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.booking-container {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 3fr 2fr;
+    align-items: start;
+}
+
+.booking-info {
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.booking-info h2 {
+    color: #495E57;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.booking-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.booking-info li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.booking-info li::before {
+    content: "•";
+    color: #F4CE14;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -5px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .booking-container {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-hero {
+        padding: 2rem 1rem;
+    }
+
+    .booking-hero h1 {
+        font-size: 2rem;
+    }
+}
