@@ -1,0 +1,75 @@
+
+:root {
+  --primary: #F4CE14;
+  --primary-ink: #333333;
+  --green: #495E57;
+  --accent-1: #EE9972;
+  --accent-2: #FBDABB;
+  --surface: #EDEFEE;
+  --white: #ffffff;
+  --black: #000000;
+  --radius: 16px;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,.08);
+  --shadow-md: 0 4px 10px rgba(0,0,0,.12);
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--primary-ink);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--green);
+  text-decoration-thickness: .1rem;
+  text-underline-offset: .2rem;
+}
+
+button, .btn {
+  background: var(--primary);
+  color: var(--primary-ink);
+  border: none;
+  padding: .75rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: transform .06s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+button:hover, .btn:hover {
+  filter: brightness(0.95);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+header.App-header {
+  background: linear-gradient(180deg, var(--green), #3e514b);
+  color: var(--white);
+  padding: 2rem 1rem;
+  display: grid;
+  place-items: center;
+  gap: .25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.App h1 {
+  margin: .25rem 0 0 0;
+}
+
+.badge {
+  background: var(--accent-2);
+  color: var(--primary-ink);
+  border-radius: 999px;
+  padding: .25rem .75rem;
+  display: inline-block;
+  font-weight: 600;
+}

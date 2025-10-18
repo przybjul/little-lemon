@@ -8,7 +8,7 @@
     text-align: center;
     margin-bottom: 3rem;
     padding: 4rem 1rem;
-    background-color: #495E57;
+    background-color: var(--green);
     color: white;
     border-radius: 16px;
 }
@@ -16,7 +16,7 @@
 .booking-hero h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    color: #F4CE14;
+    color: var(--primary);
 }
 
 .booking-hero p {
@@ -34,14 +34,14 @@
 }
 
 .booking-info {
-    background-color: #FFFFFF;
+    background-color: var(--white);
     padding: 2rem;
     border-radius: 16px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .booking-info h2 {
-    color: #495E57;
+    color: var(--green);
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
 }
@@ -60,7 +60,7 @@
 
 .booking-info li::before {
     content: "•";
-    color: #F4CE14;
+    color: var(--primary);
     font-size: 1.5rem;
     position: absolute;
     left: 0;
@@ -80,4 +80,13 @@
     .booking-hero h1 {
         font-size: 2rem;
     }
+}
+.booking-hero h1::after {
+    content: "";
+    display: block;
+    width: 72px;
+    height: 6px;
+    border-radius: 6px;
+    background: var(--primary);
+    margin: .5rem auto 0 auto;
 }

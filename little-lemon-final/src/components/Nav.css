@@ -1,5 +1,5 @@
 .navbar {
-    background-color: #ffffff;
+    background-color: var(--white);
     padding: 1rem 2rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: sticky;
@@ -26,7 +26,7 @@
 
 .navbar a {
     text-decoration: none;
-    color: #333333;
+    color: var(--primary-ink);
     font-weight: 500;
     font-size: 1.1rem;
     transition: color 0.3s ease;
@@ -34,7 +34,7 @@
 }
 
 .navbar a:hover {
-    color: #495E57;
+    color: var(--green);
 }
 
 .navbar a::after {
@@ -44,7 +44,7 @@
     height: 2px;
     bottom: -4px;
     left: 0;
-    background-color: #F4CE14;
+    background-color: var(--primary);
     transition: width 0.3s ease;
 }
 

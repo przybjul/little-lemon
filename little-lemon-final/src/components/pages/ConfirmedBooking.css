@@ -7,7 +7,7 @@
 }
 
 .confirmation-box {
-    background: white;
+    background: var(--white);
     padding: 3rem;
     border-radius: 16px;
     text-align: center;
@@ -16,13 +16,13 @@
 }
 
 .confirmation-box h1 {
-    color: #495E57;
+    color: var(--green);
     margin-bottom: 1.5rem;
 }
 
 .confirmation-icon {
     font-size: 4rem;
-    color: #F4CE14;
+    color: var(--primary);
     margin: 1.5rem 0;
     animation: scaleIn 0.5s ease-out;
 }

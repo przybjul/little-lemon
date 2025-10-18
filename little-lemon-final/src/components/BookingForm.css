@@ -2,7 +2,7 @@
     max-width: 500px;
     margin: 0 auto;
     padding: 2rem;
-    background: #ffffff;
+    background: var(--white);
     border-radius: 16px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -14,7 +14,7 @@
 }
 
 .form-title {
-    color: #495E57;
+    color: var(--green);
     margin: 0 0 1rem;
     font-size: 1.5rem;
 }
@@ -26,14 +26,14 @@
 }
 
 fieldset {
-    border: 1px solid #EDEFEE;
+    border: 1px solid var(--surface);
     border-radius: 8px;
     padding: 1.5rem;
     margin: 0;
 }
 
 legend {
-    color: #495E57;
+    color: var(--green);
     font-weight: 600;
     padding: 0 0.5rem;
 }
@@ -53,7 +53,7 @@ legend {
 .booking-form label {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #495E57;
+    color: var(--green);
     margin-bottom: 0.5rem;
 }
 
@@ -61,7 +61,7 @@ legend {
 .booking-form select {
     width: 100%;
     padding: 12px;
-    border: 2px solid #EDEFEE;
+    border: 2px solid var(--surface);
     border-radius: 8px;
     font-size: 1rem;
     transition: all 0.3s ease;
@@ -70,13 +70,13 @@ legend {
 .booking-form input:focus,
 .booking-form select:focus {
     outline: none;
-    border-color: #F4CE14;
+    border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(244, 206, 20, 0.2);
 }
 
 .booking-form input[type="submit"] {
-    background-color: #F4CE14;
-    color: #333333;
+    background-color: var(--primary);
+    color: var(--primary-ink);
     font-weight: bold;
     padding: 1rem;
     border: none;
@@ -138,7 +138,7 @@ legend {
 .booking-form input:focus-visible,
 .booking-form select:focus-visible,
 .booking-form button:focus-visible {
-    outline: 3px solid #F4CE14;
+    outline: 3px solid var(--primary);
     outline-offset: 2px;
 }
 
