@@ -39,6 +39,22 @@ function BookingForm({ availableTimes, updateTimes, submitForm }) {
     };
 
     // Handle blur events for touched state
+    const handleChange = (name, value) => {
+        if (name === 'date') {
+            setDate(value);
+            updateTimes(value);
+        } else if (name === 'time') {
+            setTime(value);
+        } else if (name === 'guests') {
+            setGuests(value);
+        } else if (name === 'occasion') {
+            setOccasion(value);
+        }
+        // walidujemy tylko zmienione pole
+        setErrors(prev => ({ ...prev, [name]: validateField(name, value) }));
+    };
+
+    // Handle blur events for touched state
     const handleBlur = (e) => {
         const { name } = e.target;
         setTouched(prev => ({ ...prev, [name]: true }));
@@ -82,8 +98,8 @@ function BookingForm({ availableTimes, updateTimes, submitForm }) {
 
     return (
         <div className="booking-form">
-            <form 
-                onSubmit={handleSubmit} 
+            <form
+                onSubmit={handleSubmit}
                 noValidate
                 aria-labelledby="booking-form-title"
                 aria-describedby="booking-form-desc"
@@ -102,15 +118,12 @@ function BookingForm({ availableTimes, updateTimes, submitForm }) {
 
                     <div className="form-field" role="group" aria-labelledby="date-label">
                         <label id="date-label" htmlFor="res-date">Choose date</label>
-                        <input 
-                            type="date" 
+                        <input
+                            type="date"
                             id="res-date"
                             name="date"
                             value={date}
-                            onChange={(e) => {
-                                setDate(e.target.value);
-                                updateTimes(e.target.value);
-                            }}
+                            onChange={(e) => handleChange('date', e.target.value)}
                             onBlur={handleBlur}
                             required
                             min={new Date().toISOString().split('T')[0]}
@@ -125,14 +138,14 @@ function BookingForm({ availableTimes, updateTimes, submitForm }) {
                             </span>
                         )}
                     </div>
-                    
+
                     <div className="form-field" role="group" aria-labelledby="time-label">
                         <label id="time-label" htmlFor="res-time">Choose time</label>
-                        <select 
+                        <select
                             id="res-time"
                             name="time"
                             value={time}
-                            onChange={(e) => setTime(e.target.value)}
+                            onChange={(e) => handleChange('time', e.target.value)}
                             onBlur={handleBlur}
                             required
                             className={touched.time && errors.time ? 'error' : ''}
@@ -151,15 +164,15 @@ function BookingForm({ availableTimes, updateTimes, submitForm }) {
                             </span>
                         )}
                     </div>
-                    
+
                     <div className="form-field" role="group" aria-labelledby="guests-label">
                         <label id="guests-label" htmlFor="guests">Number of guests</label>
-                        <input 
+                        <input
                             type="number"
                             id="guests"
                             name="guests"
                             value={guests}
-                            onChange={(e) => setGuests(parseInt(e.target.value) || '')}
+                            onChange={(e) => handleChange('guests', parseInt(e.target.value) || '')}
                             onBlur={handleBlur}
                             placeholder="1"
                             min="1"
@@ -177,14 +190,14 @@ function BookingForm({ availableTimes, updateTimes, submitForm }) {
                             </span>
                         )}
                     </div>
-                    
+
                     <div className="form-field" role="group" aria-labelledby="occasion-label">
                         <label id="occasion-label" htmlFor="occasion">Occasion</label>
-                        <select 
+                        <select
                             id="occasion"
                             name="occasion"
                             value={occasion}
-                            onChange={(e) => setOccasion(e.target.value)}
+                            onChange={(e) => handleChange('occasion', e.target.value)}
                             onBlur={handleBlur}
                             required
                             className={touched.occasion && errors.occasion ? 'error' : ''}
@@ -203,13 +216,11 @@ function BookingForm({ availableTimes, updateTimes, submitForm }) {
                         )}
                     </div>
                 </fieldset>
-                
-                <button 
+
+                <button
                     type="submit"
                     className="submit-button"
-                    disabled={Object.keys(touched).length === 0 || Object.values(errors).some(error => error)}
                     aria-label="Submit reservation request"
-                    aria-disabled={Object.keys(touched).length === 0 || Object.values(errors).some(error => error)}
                 >
                     Make Your reservation
                 </button>
